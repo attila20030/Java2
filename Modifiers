@@ -1,0 +1,37 @@
+public class Person{
+    // properties (fields are now private)
+    private String name;
+    private int age;
+    private String gender;
+
+    // constructors (public)
+    public Person(String name, int age, String gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+
+    public Person(String name, int age) {
+        this.name = "Jane Doe";
+        this.age = 30;
+        this.gender = "female";
+    }
+
+    // methods (public)
+    public void printDetails() {
+        System.out.println("A name értéke: " + this.name);
+        System.out.println("Az age: " + this.age);
+        System.out.println("A gender értéke: " + this.gender);
+    }
+}
+
+// Main class
+public class Main{
+    // main method (public static)
+    public static void main(String[] args) {
+        // Creating a Person object. We must give parameter value here
+        Person human = new Person("Jane Doe", 30, "female");
+        // Assign value to class properties and print details
+        human.printDetails();
+    }
+}
