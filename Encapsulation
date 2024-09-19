@@ -1,0 +1,66 @@
+package com.company;
+
+class Person{
+    // properties
+    String name;
+    int age;
+    String gender;
+
+    // constructor
+    public Person(String name,int age,String gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+    public Person(String name,int age) {
+        this.name = "Jane Doe";
+        this.age = 30;
+        this.gender = "female";
+    }
+    // methods
+    void printDetails(){
+        System.out.println("A name értéke "+this.name);
+        System.out.println("az age  "+this.age);
+        System.out.println("a gender értéke"+this.gender);
+    }
+
+    public String getter(){
+        return name;
+    }
+    public int setter(){
+        return age;
+    }
+}
+
+
+package com.company;
+
+class Matek{
+   private int num1;
+    private int num2;
+
+    public int Sum(){
+        return num1 + num2;
+    }
+
+    public int Sub(){
+        return num1 - num2;
+    }
+
+    public int Mul() {
+        return num1 * num2;
+    }
+
+    public int Div(int num1,int num2){
+        if(num2 == 0){
+            System.out.println("A második paraméter nem lehet nulla!");
+        }
+        return num1 / num2;
+    }
+
+    public int Mod(int num1,int num2){
+        return num1 % num2;
+    }
+
+
+}
