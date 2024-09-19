@@ -1,0 +1,35 @@
+class Person{
+    // properties
+    String name;
+    int age;
+    String gender;
+
+    // constructor
+    public Person(String name,int age,String gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+    public Person(String name,int age) {
+        this.name = "Jane Doe";
+        this.age = 30;
+        this.gender = "female";
+    }
+    // methods
+    void printDetails(){
+        System.out.println("A name értéke "+this.name);
+        System.out.println("az age  "+this.age);
+        System.out.println("a gender értéke"+this.gender);
+    }
+
+}
+// Main class
+public class Main {
+    // main method
+    public static void main(String[] args) {
+        //Creating a object from class Computer. We must give parameter value here
+        Person human = new Person("Jane Doe", 30,"female");
+        // Assign value to class properties
+       human.printDetails();
+    }
+}
