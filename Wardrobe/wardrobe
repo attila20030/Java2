@@ -1,0 +1,53 @@
+package Wardrobe;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Wardrobe {
+    private List<Cloth> clothes;
+
+    public Wardrobe() {
+        clothes = new ArrayList<>();
+    }
+
+    public void addCloth(Cloth cloth) {
+        clothes.add(cloth);
+    }
+
+    public void printInfo() {
+        if (clothes.isEmpty()) {
+            System.out.println("A szekrény üres.");
+            return;
+        }
+    }
+
+    public void washAllClothes() {
+        for (Cloth cloth : clothes) {
+            if (cloth.needsToBeWashed()) {
+                cloth.wash();
+                System.out.println(cloth.getInfo());
+            }
+        }
+    }
+
+    public void repairAllClothes() {
+        for (Cloth cloth : clothes) {
+            if (cloth.needsToBeRepaired()) {
+                cloth.repair();
+                System.out.println(cloth.getInfo());
+            }
+        }
+    }
+
+    public List<Cloth> purge() {
+        List<Cloth> removedClothes = new ArrayList<>();
+        clothes.removeIf(cloth -> {
+            if (cloth.condition == 0) {
+                removedClothes.add(cloth);
+                return true;
+            }
+            return false;
+        });
+        return removedClothes;
+    }
+}
