@@ -1,0 +1,37 @@
+package Wardrobe;
+
+public class Main {
+    public static void main(String[] args) {
+        Wardrobe wardrobe = new Wardrobe();
+
+        Cloth shirt = new UpperWear("kék", 50); 
+        Cloth pants = new LowerWear("fekete", 100);
+
+        wardrobe.addCloth(shirt);
+        wardrobe.addCloth(pants);
+
+        wardrobe.printInfo();
+
+        try {
+            shirt.wear();
+            pants.wear();
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+        }
+
+        wardrobe.washAllClothes();
+        wardrobe.printInfo();
+        wardrobe.repairAllClothes();
+        wardrobe.printInfo();
+
+        List<Cloth> purgedClothes = wardrobe.purge();
+        
+
+        System.out.println("\nEltávolított ruhák:");
+        for (Cloth removedCloth : purgedClothes) {
+            System.out.println(removedCloth.getInfo());
+        }
+
+        wardrobe.printInfo();
+    }
+}
