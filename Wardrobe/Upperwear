@@ -1,0 +1,19 @@
+package Wardrobe;
+
+public class UpperWear extends Cloth {
+    
+    public UpperWear(String color, int condition) {
+        super(color, "felsőruházat",condition = 50);
+    }
+
+    @Override
+    public boolean needsToBeWashed() {
+        return daysWorn >= 5;
+    }
+
+    @Override
+    public boolean needsToBeRepaired() {
+        return condition >= 1 && condition <= 5;
+    }
+
+}
