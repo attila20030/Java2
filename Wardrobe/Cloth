@@ -1,0 +1,40 @@
+package Wardrobe;
+
+public abstract class Cloth {
+    String color;
+    String type;
+    int condition;
+    int daysWorn;
+
+    public Cloth(String color, String type, int condition) {
+        this.color = color;
+        this.type = type;
+        this.condition = condition;
+        this.daysWorn = 0;
+    }
+
+    public abstract boolean needsToBeWashed(); 
+    public abstract boolean needsToBeRepaired(); 
+
+    public void wear() throws IllegalStateException {
+        if (needsToBeWashed()) {
+            throw new IllegalStateException(type + " " + color + "mosni kell.");
+        }
+        daysWorn++;
+    }
+
+    public void wash() {
+        if (condition > 0) {
+            condition--;
+        }
+        daysWorn = 0; 
+    }
+
+    public void repair() {
+        condition = getInitialCondition();
+    }
+
+    public String getInfo() {
+        return color + " " + type + " viselt " + daysWorn + " napja, még " + condition + " mosási ciklus van hátra.";
+    }
+}
